@@ -7,11 +7,13 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import productsReducer from "./src/store/reducers/products";
 import cartReducer from "./src/store/reducers/cart";
+import ordersReducer from "./src/store/reducers/orders";
 import ShopNavigator from "./src/navigation/ShopNavigator";
 
 const rootReducer = combineReducers({
   product: productsReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  orders: ordersReducer
 });
 
 const store = createStore(rootReducer, composeWithDevTools());
