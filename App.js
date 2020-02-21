@@ -9,12 +9,14 @@ import ReduxThunk from "redux-thunk";
 import productsReducer from "./src/store/reducers/products";
 import cartReducer from "./src/store/reducers/cart";
 import ordersReducer from "./src/store/reducers/orders";
-import ShopNavigator from "./src/navigation/ShopNavigator";
+import authReducer from "./src/store/reducers/auth";
+import NavigationContainer from "./src/navigation/NavigationContainer";
 
 const rootReducer = combineReducers({
   product: productsReducer,
   cart: cartReducer,
-  orders: ordersReducer
+  orders: ordersReducer,
+  auth: authReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
@@ -41,7 +43,7 @@ export default function App() {
   }
   return (
     <Provider store={store}>
-      <ShopNavigator />
+      <NavigationContainer />
     </Provider>
   );
 }
